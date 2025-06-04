@@ -1,0 +1,332 @@
+/* ===== MR. ROBOT / EVIL CORP THEME ===== */
+:root {
+    --evil-red: #e50914;
+    --dark-bg: #0a0a0a;
+    --terminal-green: #00ff41;
+    --glitch-blue: #0ff;
+    --glitch-pink: #f0f;
+    --white: #e0e0e0;
+}
+
+body {
+    font-family: 'Inconsolata', monospace;
+    background-color: var(--dark-bg);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Terminal-like Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Share Tech Mono', monospace;
+    font-weight: bold;
+}
+
+a {
+    color: var(--evil-red);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: var(--terminal-green);
+    text-shadow: 0 0 5px var(--terminal-green);
+}
+
+/* Evil Corp Styling */
+.evil-corp {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--evil-red);
+    text-transform: uppercase;
+}
+
+.terminal-text {
+    color: var(--terminal-green);
+}
+
+/* Glitch Effect */
+.glitch {
+    position: relative;
+}
+
+.glitch:hover::before, .glitch:hover::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--dark-bg);
+}
+
+.glitch:hover::before {
+    left: 2px;
+    text-shadow: -2px 0 var(--glitch-blue);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+
+.glitch:hover::after {
+    left: -2px;
+    text-shadow: -2px 0 var(--glitch-pink);
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim-2 2s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+    0% { clip: rect(32px, 9999px, 76px, 0); }
+    20% { clip: rect(108px, 9999px, 23px, 0); }
+    40% { clip: rect(47px, 9999px, 52px, 0); }
+    60% { clip: rect(112px, 9999px, 34px, 0); }
+    80% { clip: rect(98px, 9999px, 54px, 0); }
+    100% { clip: rect(14px, 9999px, 99px, 0); }
+}
+
+@keyframes glitch-anim-2 {
+    0% { clip: rect(85px, 9999px, 25px, 0); }
+    20% { clip: rect(66px, 9999px, 2px, 0); }
+    40% { clip: rect(115px, 9999px, 76px, 0); }
+    60% { clip: rect(99px, 9999px, 102px, 0); }
+    80% { clip: rect(10px, 9999px, 85px, 0); }
+    100% { clip: rect(78px, 9999px, 115px, 0); }
+}
+
+/* CRT Terminal Effect */
+.terminal-screen {
+    background-color: rgba(0, 10, 0, 0.2);
+    border: 1px solid var(--terminal-green);
+    box-shadow: 0 0 10px var(--terminal-green);
+    position: relative;
+    overflow: hidden;
+}
+
+.terminal-screen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 255, 65, 0.1) 1px, transparent 1px);
+    background-size: 100% 2px;
+    animation: scanline 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scanline {
+    0% { transform: translateY(0%); }
+    100% { transform: translateY(100%); }
+}
+
+/* Evil Corp Button */
+.btn-evil {
+    background-color: var(--evil-red);
+    color: white;
+    border: none;
+    font-weight: bold;
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-evil:hover {
+    background-color: transparent;
+    color: var(--evil-red);
+    border: 1px solid var(--evil-red);
+    box-shadow: 0 0 10px var(--evil-red);
+}
+
+/* Navigation */
+.navbar {
+    background-color: rgba(10, 10, 10, 0.9);
+    border-bottom: 1px solid var(--evil-red);
+    transition: all 0.3s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+}
+
+.navbar-hidden {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+.navbar-brand {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--evil-red) !important;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: var(--white) !important;
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: var(--terminal-green) !important;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--terminal-green);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+@media (max-width: 991.98px) {
+    .navbar {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+    }
+    
+    .navbar-collapse {
+        background-color: rgba(10, 10, 10, 0.98);
+        padding: 20px;
+        border-radius: 0 0 5px 5px;
+        border: 1px solid var(--evil-red);
+        box-shadow: 0 5px 15px rgba(229, 9, 20, 0.3);
+    }
+}
+
+/* Hero Section */
+#hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: 4.5rem;
+    }
+}
+
+.typing-effect::after {
+    content: "|";
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* About Section */
+.profile-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--evil-red);
+    box-shadow: 0 0 20px var(--evil-red);
+}
+
+/* Skills Section */
+.skill-card {
+    background-color: rgba(20, 0, 0, 0.2);
+    border: 1px solid var(--evil-red);
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.3);
+}
+
+/* Experience Timeline */
+.timeline {
+    position: relative;
+    padding-left: 50px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: var(--evil-red);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--evil-red);
+    box-shadow: 0 0 10px var(--evil-red);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(10, 10, 10, 0.9);
+    border-top: 1px solid var(--evil-red);
+    padding: 30px 0;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid var(--evil-red);
+    border-radius: 50%;
+    margin: 0 10px;
+    color: var(--evil-red);
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--evil-red);
+    color: white;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(229, 9, 20, 0.3);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--evil-red);
+    border-radius: 5px;
+}
+
