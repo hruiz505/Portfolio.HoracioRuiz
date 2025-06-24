@@ -70,6 +70,28 @@
             margin-bottom: 3rem;
         }
 
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .language-btn {
+            background-color: var(--dark-bg);
+            border: 1px solid var(--terminal-green);
+            color: var(--terminal-green);
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .language-btn:hover {
+            background-color: var(--terminal-green);
+            color: var(--dark-bg);
+        }
+
         /* ===== Component Styles ===== */
         /* Navigation */
         .navbar {
@@ -338,6 +360,11 @@
 </head>
 
 <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="100">
+    <!-- Language Toggle -->
+    <div class="language-toggle">
+        <button id="languageToggle" class="language-btn">ES</button>
+    </div>
+    
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
@@ -347,12 +374,12 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hero" data-en="Home" data-es="Inicio">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about" data-en="About" data-es="Sobre mí">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills" data-en="Skills" data-es="Habilidades">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience" data-en="Experience" data-es="Experiencia">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects" data-en="Projects" data-es="Proyectos">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact" data-en="Contact" data-es="Contacto">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -363,12 +390,15 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-8 text-center text-lg-start">
-                    <h1 class="hero-title terminal-text glitch" data-text="HELLO, FRIEND.">HELLO, FRIEND.</h1>
-                    <h2 class="terminal-text mb-4 typing-effect">I'M <span class="evil-corp">HORACIO_RUIZ</span></h2>
-                    <p class="lead mb-4">Cybersecurity Analyst | SOC Operations | GRC | Threat Hunting | Technical Team Lead</p>
+                    <h1 class="hero-title terminal-text glitch" data-text="HELLO, FRIEND." data-en="HELLO, FRIEND." data-es="HOLA, AMIGO.">HELLO, FRIEND.</h1>
+                    <h2 class="terminal-text mb-4 typing-effect" data-en="I'M HORACIO_RUIZ" data-es="SOY HORACIO_RUIZ">I'M <span class="evil-corp">HORACIO_RUIZ</span></h2>
+                    <p class="lead mb-4" data-en="Cybersecurity Analyst | SOC Operations | GRC | Threat Hunting | Technical Team Lead" 
+                       data-es="Analista de Ciberseguridad | Operaciones SOC | GRC | Caza de Amenazas | Líder Técnico de Equipo">
+                       Cybersecurity Analyst | SOC Operations | GRC | Threat Hunting | Technical Team Lead
+                    </p>
                     <div class="mt-4">
-                        <a href="#about" class="btn btn-evil me-3">About Me</a>
-                        <a href="#contact" class="btn btn-outline-light">Contact</a>
+                        <a href="#about" class="btn btn-evil me-3" data-en="About Me" data-es="Sobre mí">About Me</a>
+                        <a href="#contact" class="btn btn-outline-light" data-en="Contact" data-es="Contacto">Contact</a>
                     </div>
                 </div>
             </div>
@@ -379,7 +409,7 @@
     <section id="about" class="py-5 terminal-screen">
         <div class="container">
             <div class="section-title mb-5">
-                <h2 class="evil-corp">WHO_AM_I?</h2>
+                <h2 class="evil-corp" data-en="WHO_AM_I?" data-es="¿QUIÉN_SOY?">WHO_AM_I?</h2>
                 <div class="line-divider"></div>
             </div>
             
@@ -388,30 +418,35 @@
                     <img src="Media/IMG_3111.jpg" alt="Horacio Ruiz" class="profile-img">
                 </div>
                 <div class="col-lg-8">
-                    <h3 class="terminal-text mb-3">SOC ANALYST & GRC SPECIALIST</h3>
-                    <p>Cybersecurity professional with hands-on experience in SOC monitoring, incident response, and governance frameworks. Passionate about threat detection and risk mitigation through technical controls and policy development.</p>
+                    <h3 class="terminal-text mb-3" data-en="SOC ANALYST & GRC SPECIALIST" data-es="ANALISTA SOC & ESPECIALISTA GRC">SOC ANALYST & GRC SPECIALIST</h3>
+                    <p data-en="Cybersecurity professional with hands-on experience in SOC monitoring, incident response, and governance frameworks. Passionate about threat detection and risk mitigation through technical controls and policy development."
+                       data-es="Profesional de ciberseguridad con experiencia práctica en monitoreo SOC, respuesta a incidentes y marcos de gobernanza. Apasionado por la detección de amenazas y la mitigación de riesgos mediante controles técnicos y desarrollo de políticas.">
+                       Cybersecurity professional with hands-on experience in SOC monitoring, incident response, and governance frameworks. Passionate about threat detection and risk mitigation through technical controls and policy development.
+                    </p>
                     
                     <div class="row mt-4">
                         <div class="col-md-6">
                             <ul class="list-unstyled">
-                                <li class="mb-2"><strong class="terminal-text">Name:</strong> Horacio Ruiz</li>
-                                <li class="mb-2"><strong class="terminal-text">Email:</strong> horacio.cr.belair1107@gmail.com</li>
-                                <li class="mb-2"><strong class="terminal-text">Phone:</strong> (954) 556-0429</li>
+                                <li class="mb-2"><strong class="terminal-text" data-en="Name:" data-es="Nombre:">Name:</strong> Horacio Ruiz</li>
+                                <li class="mb-2"><strong class="terminal-text" data-en="Email:" data-es="Correo:">Email:</strong> horacio.cr.belair1107@gmail.com</li>
+                                <li class="mb-2"><strong class="terminal-text" data-en="Phone:" data-es="Teléfono:">Phone:</strong> (954) 556-0429</li>
                             </ul>
                         </div>
                         <div class="col-md-6">
                             <ul class="list-unstyled">
-                                <li class="mb-2"><strong class="terminal-text">Education:</strong> B.S. Management Information Systems</li>
-                                <li class="mb-2"><strong class="terminal-text">Certifications:</strong> Antisyphon Cyber Range, Cisco Networking, TryHackMe SOC L1 (In Progress)</li>
-                                <li class="mb-2"><strong class="terminal-text">Location:</strong> Miami, Florida</li>
+                                <li class="mb-2"><strong class="terminal-text" data-en="Education:" data-es="Educación:">Education:</strong> <span data-en="B.S. Management Information Systems" data-es="Lic. en Sistemas de Información">B.S. Management Information Systems</span></li>
+                                <li class="mb-2"><strong class="terminal-text" data-en="Certifications:" data-es="Certificaciones:">Certifications:</strong> <span data-en="Asana Workflow, Cisco Networking, Antisyphon Cyber Active Defense & Cyber Deception, TryHackMe SOC L1 (In Progress)" data-es="Asana Workflow, Redes Cisco, Antisyphon Cyber Defensa Activa & Engaño Cibernético, TryHackMe SOC L1 (En Progreso)">Asana Workflow, Cisco Networking, Antisyphon Cyber Active Defense & Cyber Deception, TryHackMe SOC L1</span></li>
+                                <li class="mb-2"><strong class="terminal-text" data-en="Location:" data-es="Ubicación:">Location:</strong> <span data-en="Miami, Florida" data-es="Miami, Florida">Miami, Florida</span></li>
                             </ul>
                         </div>
                     </div>
                     
-                    <p class="mt-3">Specializing in SIEM analysis (Splunk), vulnerability scanning (Tenable.io), and developing secure workflows through PowerShell automation.</p>
+                    <p class="mt-3" data-en="Specializing in SIEM analysis (Splunk), vulnerability scanning (Tenable.io), and developing secure workflows through PowerShell automation."
+                       data-es="Especializado en análisis SIEM (Splunk), escaneo de vulnerabilidades (Tenable.io) y desarrollo de flujos de trabajo seguros mediante automatización con PowerShell.">
+                       Specializing in SIEM analysis (Splunk), vulnerability scanning (Tenable.io), and developing secure workflows through PowerShell automation.
+                    </p>
                     
-                    <a href="#" class="btn btn-evil mt-3">Download Resume</a>
-                </div>
+                    <a href="https://docs.google.com/document/d/1x0Mt4u6rdRZvDuzW6x6QH0AVWpCEWV-bqYQMUB0Rkwo/export?format=pdf" class="btn btn-evil mt-3" data-en="Download Resume" data-es="Descargar CV" download="Resume_Horacio_Ruiz.pdf"> Download Resume</a>                </div>
             </div>
         </div>
     </section>
@@ -420,16 +455,16 @@
     <section id="skills" class="py-5">
         <div class="container">
             <div class="section-title mb-5">
-                <h2 class="evil-corp">MY_SKILLS</h2>
+                <h2 class="evil-corp" data-en="MY_SKILLS" data-es="MIS_HABILIDADES">MY_SKILLS</h2>
                 <div class="line-divider"></div>
-                <p class="mt-3">Tools & Technologies I Work With</p>
+                <p class="mt-3" data-en="Tools & Technologies I Work With" data-es="Herramientas y tecnologías que utilizo">Tools & Technologies I Work With</p>
             </div>
             
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="skill-card text-center">
                         <i class="fas fa-shield-alt fa-3x mb-3 terminal-text"></i>
-                        <h4 class="evil-corp">SOC Operations</h4>
+                        <h4 class="evil-corp" data-en="SOC Operations" data-es="Operaciones SOC">SOC Operations</h4>
                         <p>Splunk • Defender for Endpoint • Wireshark • ELK Stack • IDS/IPS</p>
                     </div>
                 </div>
@@ -438,14 +473,17 @@
                     <div class="skill-card text-center">
                         <i class="fas fa-file-contract fa-3x mb-3 terminal-text"></i>
                         <h4 class="evil-corp">GRC</h4>
-                        <p>NIST CSF • HIPAA • ISO 27001 • Risk Assessments • Policy Development</p>
+                        <p data-en="NIST CSF • HIPAA • ISO 27001 • Risk Assessments • Policy Development"
+                           data-es="NIST CSF • HIPAA • ISO 27001 • Evaluación de Riesgos • Desarrollo de Políticas">
+                           NIST CSF • HIPAA • ISO 27001 • Risk Assessments • Policy Development
+                        </p>
                     </div>
                 </div>
                 
                 <div class="col-md-4 mb-4">
                     <div class="skill-card text-center">
                         <i class="fas fa-terminal fa-3x mb-3 terminal-text"></i>
-                        <h4 class="evil-corp">Technical</h4>
+                        <h4 class="evil-corp" data-en="Technical" data-es="Técnico">Technical</h4>
                         <p>PowerShell • KQL • TCP/IP • Linux/Windows • VirtualBox</p>
                     </div>
                 </div>
@@ -457,45 +495,81 @@
     <section id="experience" class="py-5 terminal-screen">
         <div class="container">
             <div class="section-title mb-5">
-                <h2 class="evil-corp">WORK_EXPERIENCE</h2>
+                <h2 class="evil-corp" data-en="WORK_EXPERIENCE" data-es="EXPERIENCIA_LABORAL">WORK_EXPERIENCE</h2>
                 <div class="line-divider"></div>
-                <p class="mt-3">My Professional Journey</p>
+                <p class="mt-3" data-en="My Professional Journey" data-es="Mi Trayectoria Profesional">My Professional Journey</p>
             </div>
             
             <div class="timeline">
                 <div class="timeline-item">
-                    <h4 class="evil-corp">Cybersecurity Analyst</h4>
+                    <h4 class="evil-corp" data-en="Cybersecurity Analyst" data-es="Analista de Ciberseguridad">Cybersecurity Analyst</h4>
                     <h5 class="terminal-text">Antisyphon Security Simulations</h5>
                     <div class="timeline-date">2025</div>
-                    <p>Conducted red team exercises and threat analysis</p>
+                    <p data-en="Conducted red team exercises and threat analysis" 
+                       data-es="Realicé ejercicios de red team y análisis de amenazas">
+                       Conducted red team exercises and threat analysis
+                    </p>
                     <ul>
-                        <li>Executed penetration tests using Metasploit, mapping findings to MITRE ATT&CK T1021/T1210</li>
-                        <li>Detected exfiltration attempts via Wireshark PCAP analysis and ELK Stack correlation</li>
-                        <li>Authored risk reports with prioritized remediation recommendations</li>
+                        <li data-en="Executed penetration tests using Metasploit, mapping findings to MITRE ATT&CK T1021/T1210"
+                            data-es="Ejecuté pruebas de penetración usando Metasploit, mapeando hallazgos a MITRE ATT&CK T1021/T1210">
+                            Executed penetration tests using Metasploit, mapping findings to MITRE ATT&CK T1021/T1210
+                        </li>
+                        <li data-en="Detected exfiltration attempts via Wireshark PCAP analysis and ELK Stack correlation"
+                            data-es="Detecté intentos de exfiltración mediante análisis PCAP con Wireshark y correlación en ELK Stack">
+                            Detected exfiltration attempts via Wireshark PCAP analysis and ELK Stack correlation
+                        </li>
+                        <li data-en="Authored risk reports with prioritized remediation recommendations"
+                            data-es="Elaboré informes de riesgo con recomendaciones priorizadas de remediación">
+                            Authored risk reports with prioritized remediation recommendations
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="timeline-item">
-                    <h4 class="evil-corp">Technical Support Engineer</h4>
+                    <h4 class="evil-corp" data-en="Technical Support Engineer" data-es="Ingeniero de Soporte Técnico">Technical Support Engineer</h4>
                     <h5 class="terminal-text">Concentrix</h5>
                     <div class="timeline-date">2021 - 2023</div>
-                    <p>Security-focused technical support and workflow automation</p>
+                    <p data-en="Security-focused technical support and workflow automation"
+                       data-es="Soporte técnico orientado a seguridad y automatización de flujos de trabajo">
+                       Security-focused technical support and workflow automation
+                    </p>
                     <ul>
-                        <li>Developed PowerShell scripts to automate security ticket categorization</li>
-                        <li>Leveraged Windows Defender to identify/neutralize security risks during customer interactions</li>
-                        <li>Created custom detection rules in Microsoft Defender for Endpoint</li>
+                        <li data-en="Developed PowerShell scripts to automate security ticket categorization"
+                            data-es="Desarrollé scripts en PowerShell para automatizar categorización de tickets de seguridad">
+                            Developed PowerShell scripts to automate security ticket categorization
+                        </li>
+                        <li data-en="Leveraged Windows Defender to identify/neutralize security risks during customer interactions"
+                            data-es="Utilicé Windows Defender para identificar/neutralizar riesgos de seguridad durante interacciones con clientes">
+                            Leveraged Windows Defender to identify/neutralize security risks during customer interactions
+                        </li>
+                        <li data-en="Created custom detection rules in Microsoft Defender for Endpoint"
+                            data-es="Creé reglas de detección personalizadas en Microsoft Defender for Endpoint">
+                            Created custom detection rules in Microsoft Defender for Endpoint
+                        </li>
                     </ul>
                 </div>
                 
                 <div class="timeline-item">
-                    <h4 class="evil-corp">Bilingual Team Lead</h4>
+                    <h4 class="evil-corp" data-en="Bilingual Team Lead" data-es="Líder de Equipo Bilingüe">Bilingual Team Lead</h4>
                     <h5 class="terminal-text">AnswerNet</h5>
                     <div class="timeline-date">2023 - 2024</div>
-                    <p>Technical leadership and security process improvement</p>
+                    <p data-en="Technical leadership and security process improvement"
+                       data-es="Liderazgo técnico y mejora de procesos de seguridad">
+                       Technical leadership and security process improvement
+                    </p>
                     <ul>
-                        <li>Designed secure SharePoint knowledge base with RBAC controls</li>
-                        <li>Reduced Tier 3 escalations by 30% through improved documentation</li>
-                        <li>Implemented VLAN segmentation for internal knowledge systems</li>
+                        <li data-en="Designed secure SharePoint knowledge base with RBAC controls"
+                            data-es="Diseñé base de conocimiento segura en SharePoint con controles RBAC">
+                            Designed secure SharePoint knowledge base with RBAC controls
+                        </li>
+                        <li data-en="Reduced Tier 3 escalations by 30% through improved documentation"
+                            data-es="Reduje escalamientos de Nivel 3 en 30% mediante mejor documentación">
+                            Reduced Tier 3 escalations by 30% through improved documentation
+                        </li>
+                        <li data-en="Implemented VLAN segmentation for internal knowledge systems"
+                            data-es="Implementé segmentación VLAN para sistemas internos de conocimiento">
+                            Implemented VLAN segmentation for internal knowledge systems
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -506,32 +580,50 @@
     <section id="projects" class="py-5">
         <div class="container">
             <div class="section-title mb-5">
-                <h2 class="evil-corp">PROJECTS</h2>
+                <h2 class="evil-corp" data-en="PROJECTS" data-es="PROYECTOS">PROJECTS</h2>
                 <div class="line-divider"></div>
-                <p class="mt-3">Hands-On Cybersecurity Work</p>
+                <p class="mt-3" data-en="Hands-On Cybersecurity Work" data-es="Trabajo Práctico en Ciberseguridad">Hands-On Cybersecurity Work</p>
             </div>
             
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <div class="skill-card">
-                        <h4 class="evil-corp">Threat Hunting Lab</h4>
+                        <h4 class="evil-corp" data-en="Threat Hunting Lab" data-es="Laboratorio de Caza de Amenazas">Threat Hunting Lab</h4>
                         <p class="terminal-text">Tenable.io • Splunk • Defender for Endpoint</p>
                         <ul>
-                            <li>Built virtual environment to practice detecting simulated attacks</li>
-                            <li>Scanned for vulnerabilities and tested defensive methods</li>
-                            <li>Correlated logs across SIEM and EDR platforms</li>
+                            <li data-en="Built virtual environment to practice detecting simulated attacks"
+                                data-es="Construí entorno virtual para practicar detección de ataques simulados">
+                                Built virtual environment to practice detecting simulated attacks
+                            </li>
+                            <li data-en="Scanned for vulnerabilities and tested defensive methods"
+                                data-es="Escaneé vulnerabilidades y probé métodos defensivos">
+                                Scanned for vulnerabilities and tested defensive methods
+                            </li>
+                            <li data-en="Correlated logs across SIEM and EDR platforms"
+                                data-es="Correlacioné logs entre plataformas SIEM y EDR">
+                                Correlated logs across SIEM and EDR platforms
+                            </li>
                         </ul>
                     </div>
                 </div>
                 
                 <div class="col-md-6 mb-4">
                     <div class="skill-card">
-                        <h4 class="evil-corp">Security Automation</h4>
+                        <h4 class="evil-corp" data-en="Security Automation" data-es="Automatización de Seguridad">Security Automation</h4>
                         <p class="terminal-text">PowerShell • KQL • Microsoft Defender</p>
                         <ul>
-                            <li>Developed automated ticket triage system for security alerts</li>
-                            <li>Created custom detection rules for compromised systems</li>
-                            <li>Reduced manual analysis time by 40%</li>
+                            <li data-en="Developed automated ticket triage system for security alerts"
+                                data-es="Desarrollé sistema automatizado de triaje para alertas de seguridad">
+                                Developed automated ticket triage system for security alerts
+                            </li>
+                            <li data-en="Created custom detection rules for compromised systems"
+                                data-es="Creé reglas de detección personalizadas para sistemas comprometidos">
+                                Created custom detection rules for compromised systems
+                            </li>
+                            <li data-en="Reduced manual analysis time by 40%"
+                                data-es="Reduje tiempo de análisis manual en 40%">
+                                Reduced manual analysis time by 40%
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -543,16 +635,16 @@
     <section id="contact" class="py-5 terminal-screen">
         <div class="container">
             <div class="section-title mb-5">
-                <h2 class="evil-corp">CONTACT_ME</h2>
+                <h2 class="evil-corp" data-en="CONTACT_ME" data-es="CONTÁCTAME">CONTACT_ME</h2>
                 <div class="line-divider"></div>
-                <p class="mt-3">Let's collaborate or just say hello</p>
+                <p class="mt-3" data-en="Let's collaborate or just say hello" data-es="Colaboremos o simplemente salúdame">Let's collaborate or just say hello</p>
             </div>
 
             <div class="row">
                 <div class="col-lg-6 mb-5 mb-lg-0 mx-auto">
                     <form id="contact-form" class="terminal-screen p-4" action="https://formspree.io/f/myzwvqge" method="POST">
                         <div class="mb-3">
-                            <label for="name" class="form-label terminal-text">Your Name</label>
+                            <label for="name" class="form-label terminal-text" data-en="Your Name" data-es="Tu Nombre">Your Name</label>
                             <input type="text" name="name" class="form-control bg-dark text-white border-terminal" id="name" required>
                         </div>
                         <div class="mb-3">
@@ -560,22 +652,22 @@
                             <input type="email" name="email" class="form-control bg-dark text-white border-terminal" id="email" required>
                         </div>
                         <div class="mb-3">
-                            <label for="message" class="form-label terminal-text">Message</label>
-                            <textarea name="message" class="form-control bg-dark text-white border-terminal" id="message" rows="5" required></textarea>
+                            <label for="message" class="form-label terminal-text" data-en="Message" data-es="Mensaje">Message</label>
+                            <textarea name="message" class="form-control bg-dark text-white border-terminal" id="message" rows="5" required data-en="Your message here..." data-es="Tu mensaje aquí..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-evil">Send Message</button>
+                        <button type="submit" class="btn btn-evil" data-en="Send Message" data-es="Enviar Mensaje">Send Message</button>
                         <div id="form-status" class="mt-3 text-white d-none"></div>
                     </form>
                 </div>
                 <div class="col-lg-6">
                     <div class="ps-lg-5">
-                        <h3 class="evil-corp mb-4">FIND_ME</h3>
+                        <h3 class="evil-corp mb-4" data-en="FIND_ME" data-es="ENCUÉNTRAME">FIND_ME</h3>
                         <div class="d-flex align-items-start mb-4">
                             <div class="me-3 terminal-text">
                                 <i class="fas fa-map-marker-alt fa-2x"></i>
                             </div>
                             <div>
-                                <h5 class="terminal-text">Location</h5>
+                                <h5 class="terminal-text" data-en="Location" data-es="Ubicación">Location</h5>
                                 <p>Miami, Florida</p>
                             </div>
                         </div>
@@ -595,13 +687,13 @@
                                 <i class="fas fa-phone-alt fa-2x"></i>
                             </div>
                             <div>
-                                <h5 class="terminal-text">Phone</h5>
+                                <h5 class="terminal-text" data-en="Phone" data-es="Teléfono">Phone</h5>
                                 <p>+1 (954) 556-0429</p>
                             </div>
                         </div>
                         
                         <div class="mt-5">
-                            <h5 class="evil-corp mb-3">FOLLOW_ME</h5>
+                            <h5 class="evil-corp mb-3" data-en="FOLLOW_ME" data-es="SÍGUEME">FOLLOW_ME</h5>
                             <div class="social-icons">
                                 <a href="https://github.com/hruiz505"><i class="fab fa-github"></i></a>
                                 <a href="https://www.linkedin.com/in/horaciochris-ruiz970711/"><i class="fab fa-linkedin-in"></i></a>
@@ -645,7 +737,7 @@
                     </svg>
                 </a>
             </div>
-            <p class="mb-0 terminal-text">&copy; <span id="year"></span> H.R. All rights reserved.</p>
+            <p class="mb-0 terminal-text">&copy; <span id="year"></span> <span data-en="H.R. All rights reserved." data-es="H.R. Todos los derechos reservados.">H.R. All rights reserved.</span></p>
         </div>
     </footer>
     
@@ -654,6 +746,56 @@
     <script>
         // Initialize current year
         document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Language toggle functionality
+        const languageToggle = document.getElementById('languageToggle');
+        let currentLanguage = 'en'; // Default language
+        
+        // Toggle language
+        languageToggle.addEventListener('click', () => {
+            currentLanguage = currentLanguage === 'en' ? 'es' : 'en';
+            updateLanguage(currentLanguage);
+            languageToggle.textContent = currentLanguage === 'en' ? 'ES' : 'EN';
+        });
+        
+        // Update all elements with data attributes
+        function updateLanguage(lang) {
+            // Update elements with data-en and data-es attributes
+            document.querySelectorAll('[data-en], [data-es]').forEach(element => {
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    // Handle input placeholders
+                    const placeholder = element.getAttribute(`data-${lang}`);
+                    if (placeholder) {
+                        element.setAttribute('placeholder', placeholder);
+                    }
+                } else {
+                    // Handle other elements
+                    const text = element.getAttribute(`data-${lang}`);
+                    if (text) {
+                        element.textContent = text;
+                    }
+                }
+            });
+            
+            // Special handling for typing effect
+            const typingElement = document.querySelector('.typing-effect');
+            if (typingElement) {
+                const typingText = typingElement.getAttribute(`data-${lang}`);
+                if (typingText) {
+                    // Reset and restart typing animation
+                    typingElement.textContent = '';
+                    let i = 0;
+                    const typing = setInterval(() => {
+                        if (i < typingText.length) {
+                            typingElement.textContent += typingText.charAt(i);
+                            i++;
+                        } else {
+                            clearInterval(typing);
+                        }
+                    }, 100);
+                }
+            }
+        }
         
         // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -704,13 +846,19 @@
                     });
                     
                     if (response.ok) {
-                        showFormStatus(formStatus, 'Message sent successfully!', '#00ff00');
+                        showFormStatus(formStatus, 
+                            currentLanguage === 'en' ? 'Message sent successfully!' : '¡Mensaje enviado con éxito!', 
+                            '#00ff00');
                         form.reset();
                     } else {
-                        showFormStatus(formStatus, 'Oops! There was a problem. Please try again.', '#ff0000');
+                        showFormStatus(formStatus, 
+                            currentLanguage === 'en' ? 'Oops! There was a problem. Please try again.' : '¡Ups! Hubo un problema. Por favor inténtalo de nuevo.', 
+                            '#ff0000');
                     }
                 } catch (error) {
-                    showFormStatus(formStatus, 'Network error. Please try again later.', '#ff0000');
+                    showFormStatus(formStatus, 
+                        currentLanguage === 'en' ? 'Network error. Please try again later.' : 'Error de red. Por favor inténtalo más tarde.', 
+                        '#ff0000');
                 }
             });
         };
