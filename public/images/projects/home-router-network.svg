@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" fill="none">
+  <rect width="1200" height="520" rx="24" fill="#11130F"/>
+  <path d="M52 78h1096M52 445h1096" stroke="#A3A16A" stroke-opacity=".22"/>
+  <text x="64" y="54" fill="#C3BD76" font-family="Arial,sans-serif" font-size="18" font-weight="700" letter-spacing="4">HOME NETWORK · CONCEPTUAL VIEW</text>
+  <text x="64" y="486" fill="#D9D8CC" fill-opacity=".52" font-family="Arial,sans-serif" font-size="14" letter-spacing="1.5">ILLUSTRATIVE ONLY · NOT A DEVICE CONFIGURATION OR SECURITY AUDIT</text>
+  <rect x="66" y="172" width="170" height="156" rx="18" fill="#1B1E17" stroke="#A3A16A" stroke-opacity=".55"/>
+  <circle cx="151" cy="223" r="24" stroke="#C3BD76" stroke-width="2"/>
+  <path d="M139 223h24m-20-8v16m12-16v16M143 212v-7m16 7v-7" stroke="#C3BD76" stroke-width="2" stroke-linecap="round"/>
+  <text x="151" y="277" fill="#F4F3EB" font-family="Arial,sans-serif" font-size="17" font-weight="700" text-anchor="middle">HOME LINKS</text>
+  <text x="151" y="302" fill="#C9C9BC" font-family="Arial,sans-serif" font-size="13" text-anchor="middle">Separate paths</text>
+  <path d="M236 250h78m0 0v-93h48m-48 93v0h48m-48 0v93h48" stroke="#A3A16A" stroke-opacity=".72" stroke-width="2" stroke-dasharray="5 7"/>
+  <g>
+    <rect x="362" y="111" width="210" height="92" rx="16" fill="#20231A" stroke="#C3BD76" stroke-opacity=".78"/>
+    <rect x="362" y="204" width="210" height="92" rx="16" fill="#20231A" stroke="#C3BD76" stroke-opacity=".78"/>
+    <rect x="362" y="297" width="210" height="92" rx="16" fill="#20231A" stroke="#C3BD76" stroke-opacity=".78"/>
+    <path d="M391 143h44m-44 8h44m-44 8h44m-22-17v17m37-17v17M391 236h44m-44 8h44m-44 8h44m-22-17v17m37-17v17M391 329h44m-44 8h44m-44 8h44m-22-17v17m37-17v17" stroke="#C3BD76" stroke-width="2" stroke-linecap="round"/>
+    <text x="510" y="153" fill="#F4F3EB" font-family="Arial,sans-serif" font-size="16" font-weight="700" text-anchor="middle">ROUTER 01</text>
+    <text x="510" y="175" fill="#C9C9BC" font-family="Arial,sans-serif" font-size="12" text-anchor="middle">Link / route</text>
+    <text x="510" y="246" fill="#F4F3EB" font-family="Arial,sans-serif" font-size="16" font-weight="700" text-anchor="middle">ROUTER 02</text>
+    <text x="510" y="268" fill="#C9C9BC" font-family="Arial,sans-serif" font-size="12" text-anchor="middle">Link / route</text>
+    <text x="510" y="339" fill="#F4F3EB" font-family="Arial,sans-serif" font-size="16" font-weight="700" text-anchor="middle">ROUTER 03</text>
+    <text x="510" y="361" fill="#C9C9BC" font-family="Arial,sans-serif" font-size="12" text-anchor="middle">Link / route</text>
+  </g>
+  <path d="M572 157h81m-81 93h81m-81 93h81" stroke="#A3A16A" stroke-opacity=".72" stroke-width="2" stroke-dasharray="5 7"/>
+  <rect x="653" y="126" width="230" height="250" rx="18" fill="#1B1E17" stroke="#A3A16A" stroke-opacity=".55"/>
+  <circle cx="768" cy="192" r="25" stroke="#C3BD76" stroke-width="2"/>
+  <path d="M755 192h26m-20-8v16m14-16v16m-20-24 6 6m20-6-6 6" stroke="#C3BD76" stroke-width="2" stroke-linecap="round"/>
+  <text x="768" y="251" fill="#F4F3EB" font-family="Arial,sans-serif" font-size="17" font-weight="700" text-anchor="middle">ROUTE POLICY</text>
+  <text x="768" y="279" fill="#C9C9BC" font-family="Arial,sans-serif" font-size="13" text-anchor="middle">Privacy paths</text>
+  <text x="768" y="301" fill="#C9C9BC" font-family="Arial,sans-serif" font-size="13" text-anchor="middle">Network separation</text>
+  <text x="768" y="323" fill="#C9C9BC" font-family="Arial,sans-serif" font-size="13" text-anchor="middle">Connectivity checks</text>
+  <path d="M883 251h76" stroke="#A3A16A" stroke-opacity=".72" stroke-width="2" stroke-dasharray="5 7"/>
+  <rect x="959" y="172" width="175" height="156" rx="18" fill="#1B1E17" stroke="#A3A16A" stroke-opacity=".55"/>
+  <circle cx="1046" cy="224" r="5" fill="#C3BD76"/><circle cx="1027" cy="245" r="5" fill="#C3BD76"/><circle cx="1065" cy="245" r="5" fill="#C3BD76"/>
+  <path d="m1046 229-16 12m21 0-5-12m5 12 14 0" stroke="#C3BD76" stroke-width="1.8"/>
+  <text x="1046" y="279" fill="#F4F3EB" font-family="Arial,sans-serif" font-size="17" font-weight="700" text-anchor="middle">HOME DEVICES</text>
+  <text x="1046" y="302" fill="#C9C9BC" font-family="Arial,sans-serif" font-size="13" text-anchor="middle">Intended connections</text>
+</svg>
