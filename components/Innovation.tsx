@@ -4,6 +4,9 @@ import type { InnovationProject, UiStrings } from "@/data/content";
 
 interface InnovationProps {
   projects: InnovationProject[];
+  highlights: { title: string; detail: string }[];
+  toolGroups: { title: string; detail: string; tools: string[] }[];
+  nextIntegrationTools: { name: string; url: string }[];
   title: string;
   intro: string;
   tools: string[];
@@ -15,6 +18,9 @@ interface InnovationProps {
 
 export default function Innovation({
   projects,
+  highlights,
+  toolGroups,
+  nextIntegrationTools,
   title,
   intro,
   tools,
@@ -49,15 +55,49 @@ export default function Innovation({
           </div>
         </div>
 
-        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2 border-b border-white/15 py-5 text-sm leading-6">
-          <span className="font-semibold text-white">{labels.aiToolsLabel}</span>
-          <span aria-hidden="true" className="text-white/35">/</span>
-          <span className="text-white/65">{tools.join(" · ")}</span>
+        <div className="border-b border-white/15 py-8 sm:py-10">
+          <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-[#c3bd76]">{labels.innovationStandout}</h3>
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
+            {highlights.map((highlight, index) => (
+              <article key={highlight.title} className="border border-white/10 bg-white/[0.025] p-5 sm:p-6">
+                <span className="text-xs font-semibold tabular-nums text-[#c3bd76]">0{index + 1}</span>
+                <h4 className="mt-4 text-lg font-semibold leading-snug">{highlight.title}</h4>
+                <p className="mt-2 text-sm leading-6 text-white/65">{highlight.detail}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="border-b border-white/15 py-8 sm:py-10">
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2 text-sm leading-6">
+            <span className="font-semibold text-white">{labels.handsOnTools}</span>
+            <span aria-hidden="true" className="text-white/35">/</span>
+            <span className="text-white/65">{tools.join(" · ")}</span>
+          </div>
+          <div className="mt-6 grid gap-3 md:grid-cols-3">
+            {toolGroups.map((group) => (
+              <article key={group.title} className="border border-white/10 p-5">
+                <h4 className="text-sm font-semibold text-white">{group.title}</h4>
+                <p className="mt-2 text-xs leading-5 text-white/55">{group.detail}</p>
+                <ul className="mt-4 flex flex-wrap gap-2">
+                  {group.tools.map((tool) => (
+                    <li key={tool} className="rounded-full border border-[#a3a16a]/35 bg-[#a3a16a]/[0.07] px-2.5 py-1 text-[11px] leading-4 text-[#e1ddb8]">{tool}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+          <div className="mt-4 flex flex-wrap items-center gap-2 border-l-2 border-white/20 py-2 pl-4">
+            <span className="mr-2 text-xs font-semibold text-white/55">{labels.nextIntegrationLabel}</span>
+            {nextIntegrationTools.map((tool) => (
+              <a key={tool.name} href={tool.url} target="_blank" rel="noreferrer" className="rounded-full border border-white/15 px-2.5 py-1 text-[11px] leading-4 text-white/55 transition-colors hover:border-[#c3bd76]/70 hover:text-[#e1ddb8]">{tool.name}<span className="sr-only"> (official documentation)</span></a>
+            ))}
+          </div>
         </div>
 
         <div className="grid gap-x-10 md:grid-cols-2">
           {projects.map((project, index) => {
-            const images = project.screenshots ?? (project.image ? [{ src: project.image, alt: project.imageAlt ?? "" }] : []);
+            const images = project.screenshots ?? (project.image ? [{ src: project.image, alt: project.imageAlt ?? "", caption: project.imageCaption }] : []);
             return (
             <article key={project.id} className="flex min-w-0 flex-col border-b border-white/15 py-8 sm:py-10">
               <div className="flex items-center justify-between gap-4 text-xs font-semibold uppercase tracking-[0.16em] text-white/50">
@@ -78,6 +118,7 @@ export default function Innovation({
                         sizes="(max-width: 768px) 100vw, 50vw"
                         className="h-auto w-full object-cover"
                       />
+                      {image.caption && <figcaption className="border-t border-white/10 px-3 py-2 text-[11px] leading-4 text-white/55">{image.caption}</figcaption>}
                     </figure>
                   ))}
                 </div>

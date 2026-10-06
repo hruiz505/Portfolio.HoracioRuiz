@@ -70,7 +70,24 @@ export interface InnovationProject {
   status: string;
   image?: string;
   imageAlt?: string;
-  screenshots?: { src: string; alt: string }[];
+  imageCaption?: string;
+  screenshots?: { src: string; alt: string; caption?: string }[];
+}
+
+export interface InnovationHighlight {
+  title: string;
+  detail: string;
+}
+
+export interface InnovationToolGroup {
+  title: string;
+  detail: string;
+  tools: string[];
+}
+
+export interface IntegrationTool {
+  name: string;
+  url: string;
 }
 
 export interface SpaceImage {
@@ -95,12 +112,13 @@ export interface UiStrings {
   exploreInnovation: string;
   linkedinLabel: string;
   innovationEyebrow: string;
-  aiToolsLabel: string;
   innovationChallenge: string;
   innovationAiRole: string;
   innovationEvidence: string;
   innovationTools: string;
-  downloadLogo: string;
+  innovationStandout: string;
+  handsOnTools: string;
+  nextIntegrationLabel: string;
 }
 
 export interface ContentBundle {
@@ -115,6 +133,9 @@ export interface ContentBundle {
   innovationIntro: string;
   aiTools: string[];
   innovationProjects: InnovationProject[];
+  innovationHighlights: InnovationHighlight[];
+  innovationToolGroups: InnovationToolGroup[];
+  nextIntegrationTools: IntegrationTool[];
   spaceImage: SpaceImage;
   sectionTitles: SectionTitles;
   ui: UiStrings;
@@ -272,8 +293,24 @@ const en: ContentBundle = {
     videoTitle: "What is HIPAA? What do I Need to Know for HIPAA Compliance?",
   },
   innovationIntro:
-    "I use AI as a practical engineering partner: to research, prototype, automate, and explain real systems. Each case study separates model assistance from deterministic software and shows the evidence and limits behind the work.",
+    "I bridge GRC experience and hands-on AI building: from privacy-conscious health products and agent-assisted software delivery to controlled research. Each case explains which tools were used, what was verified, and where human judgment remains essential.",
   aiTools: ["OpenAI Codex", "Claude Code", "ChatGPT", "Gemini", "Kimi", "DeepSeek"],
+  innovationHighlights: [
+    { title: "A distinctive practitioner-builder mix", detail: "Bilingual healthcare GRC and an MIS foundation, paired with hands-on software and research prototypes; 900+ critical communication cycles and a 91% QA score." },
+    { title: "Privacy boundaries are part of the design", detail: "Lunara keeps core health records on-device and makes its Gemini assistant opt-in; GRC prompts exclude PHI and confidential client data." },
+    { title: "Evidence before AI hype", detail: "I show what shipped, what failed, and what remains unproven—including MNQ results that are descriptive, not a validated trading edge." },
+  ],
+  innovationToolGroups: [
+    { title: "Agent-assisted engineering", detail: "Plan, edit, debug, review, and verify a real web release.", tools: ["OpenAI Codex", "Claude Code", "ChatGPT", "Next.js", "TypeScript", "GitHub", "Vercel"] },
+    { title: "Applied model workflows", detail: "Use model comparison for research and constrained product features.", tools: ["Gemini · Lunara opt-in assistant", "Claude · GRC drafts", "Kimi · GRC drafts", "DeepSeek · GRC drafts"] },
+    { title: "Product & research stack", detail: "Build privacy-first apps and repeatable analysis with conventional software.", tools: ["SwiftUI · SwiftData", "React · IndexedDB", "Python · Pandas", "Streamlit"] },
+  ],
+  nextIntegrationTools: [
+    { name: "Vercel AI SDK", url: "https://ai-sdk.dev/docs/introduction" },
+    { name: "OpenAI API", url: "https://platform.openai.com/docs/overview" },
+    { name: "Anthropic API", url: "https://docs.anthropic.com/en/docs/intro" },
+    { name: "Gemini API", url: "https://ai.google.dev/gemini-api/docs" },
+  ],
   innovationProjects: [
     {
       id: "lunara-health-ai",
@@ -291,8 +328,8 @@ const en: ContentBundle = {
       evidence: "The web app and static iOS export were built and validated; the mobile layout was checked at 375 × 812. App Store signing and release still require a Mac.",
       status: "Web prototype verified · iOS release preparation",
       screenshots: [
-        { src: "/images/projects/lunara-interface.jpg", alt: "Lunara dashboard interface preview using an empty Portfolio Demo profile; no cycle or health entries are present." },
-        { src: "/images/projects/lunara-calendar.jpg", alt: "Lunara monthly calendar interface preview using an empty Portfolio Demo profile; no cycle or health entries are present." },
+        { src: "/images/projects/lunara-interface.jpg", alt: "Lunara dashboard interface preview using an empty Portfolio Demo profile; no cycle or health entries are present.", caption: "Working interface · empty demo profile" },
+        { src: "/images/projects/lunara-calendar.jpg", alt: "Lunara monthly calendar interface preview using an empty Portfolio Demo profile; no cycle or health entries are present.", caption: "Working calendar · no personal health data" },
       ],
     },
     {
@@ -312,6 +349,7 @@ const en: ContentBundle = {
       status: "Research only · no validated edge · live routing disabled",
       image: "/images/projects/mnq-lab-backtest.svg",
       imageAlt: "MNQ Lab HP-10 research infographic dated October 1, 2026, showing the data split, candidate count, validation limit, and paper-only status.",
+      imageCaption: "Saved HP-10 results · report date Oct 1, 2026",
     },
     {
       id: "chrono-clash",
@@ -330,11 +368,12 @@ const en: ContentBundle = {
       status: "Prototype · launch validation required",
       image: "/images/projects/chrono-clash-prototype.jpg",
       imageAlt: "Active Chrono Clash browser greybox v0.1 screenshot showing the player, enemy units, health bar, and run timer; not the Unity build.",
+      imageCaption: "Live browser greybox v0.1 · Unity runtime still unverified",
     },
     {
       id: "workout-vault",
       title: "WorkoutVault: Private Fitness Tracker",
-      category: "Fitness web app · privacy-first, AI-assisted build",
+      category: "Private fitness tracker · AI-assisted design",
       summary: "A training tracker for routines, workout history, progress, rest timing, and data the athlete can export.",
       challenge: "Make workout logging useful without requiring an account or network for the core routine.",
       process: [
@@ -346,6 +385,9 @@ const en: ContentBundle = {
       tools: ["WorkoutVault", "AI-assisted product design", "Privacy-first data design"],
       evidence: "Project files cover routine design, workout logging, rest timing, personal records, charts, and CSV/JSON export. A public demo link is not attached yet.",
       status: "Fitness product prototype · demo link to add",
+      image: "/images/projects/workout-vault-concept.svg",
+      imageAlt: "Feature concept preview for WorkoutVault, illustrating local workout logging, rest timer, strength chart, Epley estimate, and export. It is not a screenshot from the app.",
+      imageCaption: "Feature concept from the prototype spec · not an in-app screenshot",
     },
     {
       id: "three-router-home-network",
@@ -380,6 +422,9 @@ const en: ContentBundle = {
       tools: ["ChatGPT", "Deep Research", "Sites", "Prompt design"],
       evidence: "A Costuras by Sule website prototype was created. Final domain ownership, commercial maintenance, and client handoff are separate decisions.",
       status: "Website prototype built · reusable workflow in progress",
+      image: "/images/projects/agentic-website-workflow.svg",
+      imageAlt: "Workflow infographic for turning a business brief into research, a site plan, a responsive prototype, and an owner-reviewed handoff.",
+      imageCaption: "Reusable workflow shown through the Costuras by Sule prototype",
     },
     {
       id: "grc-llm-workflow",
@@ -396,6 +441,9 @@ const en: ContentBundle = {
       tools: ["Claude", "Kimi", "DeepSeek", "ChatGPT", "OpenAI Codex"],
       evidence: "This is a hands-on analysis workflow, not a deployed GRC automation product. Do not enter PHI or confidential client data into public models.",
       status: "Practiced workflow · human validation required",
+      image: "/images/projects/grc-gap-analysis.svg",
+      imageAlt: "Human-reviewed LLM workflow for mapping a sanitized privacy process to candidate NIST CSF controls, then verifying evidence and recording gaps.",
+      imageCaption: "Analysis workflow · candidate mappings require source and evidence review",
     },
     {
       id: "ai-assisted-delivery",
@@ -412,6 +460,9 @@ const en: ContentBundle = {
       tools: ["Claude Code", "OpenAI Codex", "ChatGPT", "Next.js", "TypeScript", "GitHub", "Vercel"],
       evidence: "The site passed lint and its production build, and the updated experience was verified on horacio-portfolio.vercel.app.",
       status: "Production deployment verified",
+      image: "/images/projects/agentic-delivery-workflow.svg",
+      imageAlt: "Agent-assisted software delivery flow from brief and plan through Codex or Claude Code, local checks, human review, GitHub, and Vercel production verification.",
+      imageCaption: "Production workflow · agent-generated edits checked before release",
     },
   ],
   spaceImage: {
@@ -434,12 +485,13 @@ const en: ContentBundle = {
     exploreInnovation: "Follow my AI work on LinkedIn",
     linkedinLabel: "Connect on LinkedIn",
     innovationEyebrow: "Applied AI · Systems · Responsible Practice",
-    aiToolsLabel: "AI tools in practice",
     innovationChallenge: "The challenge",
     innovationAiRole: "Where AI fits",
     innovationEvidence: "Evidence & current status",
     innovationTools: "Tools",
-    downloadLogo: "Download my logo (SVG)",
+    innovationStandout: "What makes my approach different",
+    handsOnTools: "Tools used hands-on",
+    nextIntegrationLabel: "Ready-to-build integration paths · not yet connected",
   },
 };
 
@@ -595,8 +647,24 @@ const es: ContentBundle = {
     videoTitle: "Normas de Privacidad y Seguridad de HIPAA (en español)",
   },
   innovationIntro:
-    "Uso la IA como apoyo práctico de ingeniería para investigar, crear prototipos, automatizar y explicar sistemas reales. Cada caso distingue la ayuda del modelo del software determinista y presenta la evidencia y los límites del trabajo.",
+    "Uno mi experiencia en GRC con la creación práctica de soluciones de IA: desde productos de salud con privacidad hasta software creado con agentes e investigación controlada. Cada caso explica las herramientas, lo que se verificó y dónde sigue siendo esencial el criterio humano.",
   aiTools: ["OpenAI Codex", "Claude Code", "ChatGPT", "Gemini", "Kimi", "DeepSeek"],
+  innovationHighlights: [
+    { title: "Una combinación práctica y distintiva", detail: "Experiencia bilingüe en GRC para salud y formación en MIS, junto con prototipos de software e investigación; más de 900 ciclos críticos y 91% de QA." },
+    { title: "La privacidad forma parte del diseño", detail: "Lunara guarda los datos de salud principales en el dispositivo y ofrece Gemini solo con consentimiento; los análisis GRC excluyen PHI y datos confidenciales de clientes." },
+    { title: "Evidencia antes que exageraciones de IA", detail: "Muestro qué se publicó, qué falló y qué sigue sin probarse, incluidos resultados de MNQ que son descriptivos y no validan una ventaja de trading." },
+  ],
+  innovationToolGroups: [
+    { title: "Ingeniería asistida por agentes", detail: "Planificar, editar, depurar, revisar y verificar una publicación web real.", tools: ["OpenAI Codex", "Claude Code", "ChatGPT", "Next.js", "TypeScript", "GitHub", "Vercel"] },
+    { title: "Flujos aplicados de modelos", detail: "Comparar modelos para investigar y crear funciones con límites claros.", tools: ["Gemini · asistente opcional de Lunara", "Claude · borradores GRC", "Kimi · borradores GRC", "DeepSeek · borradores GRC"] },
+    { title: "Tecnologías de producto e investigación", detail: "Crear aplicaciones privadas y análisis repetibles con software convencional.", tools: ["SwiftUI · SwiftData", "React · IndexedDB", "Python · Pandas", "Streamlit"] },
+  ],
+  nextIntegrationTools: [
+    { name: "Vercel AI SDK", url: "https://ai-sdk.dev/docs/introduction" },
+    { name: "OpenAI API", url: "https://platform.openai.com/docs/overview" },
+    { name: "Anthropic API", url: "https://docs.anthropic.com/en/docs/intro" },
+    { name: "Gemini API", url: "https://ai.google.dev/gemini-api/docs" },
+  ],
   innovationProjects: [
     {
       id: "lunara-health-ai",
@@ -614,8 +682,8 @@ const es: ContentBundle = {
       evidence: "Se construyeron y validaron la aplicación web y la exportación estática para iOS; se revisó el diseño móvil a 375 × 812. La firma y publicación requieren una Mac.",
       status: "Prototipo web verificado · preparación para iOS",
       screenshots: [
-        { src: "/images/projects/lunara-interface.jpg", alt: "Vista previa del panel de Lunara con un perfil de demostración vacío; no contiene datos de ciclo ni de salud." },
-        { src: "/images/projects/lunara-calendar.jpg", alt: "Vista previa del calendario mensual de Lunara con un perfil de demostración vacío; no contiene datos de ciclo ni de salud." },
+        { src: "/images/projects/lunara-interface.jpg", alt: "Vista previa del panel de Lunara con un perfil de demostración vacío; no contiene datos de ciclo ni de salud.", caption: "Interfaz funcional · perfil de demostración vacío" },
+        { src: "/images/projects/lunara-calendar.jpg", alt: "Vista previa del calendario mensual de Lunara con un perfil de demostración vacío; no contiene datos de ciclo ni de salud.", caption: "Calendario funcional · sin datos personales de salud" },
       ],
     },
     {
@@ -657,7 +725,7 @@ const es: ContentBundle = {
     {
       id: "workout-vault",
       title: "WorkoutVault: registro privado de entrenamiento",
-      category: "Aplicación web de fitness · privada y asistida por IA",
+      category: "Registro privado de fitness · diseño asistido por IA",
       summary: "Registro de entrenamiento para rutinas, historial, progreso, descansos y exportación de datos bajo control del atleta.",
       challenge: "Hacer útil el registro de ejercicios sin exigir cuenta ni conexión para las funciones principales.",
       process: [
@@ -669,6 +737,9 @@ const es: ContentBundle = {
       tools: ["WorkoutVault", "Diseño de producto asistido por IA", "Diseño de datos privados"],
       evidence: "Los archivos cubren rutinas, registro de ejercicios, descansos, récords, gráficos y exportación CSV/JSON. Falta enlazar una demo pública.",
       status: "Prototipo de fitness · falta añadir enlace a demo",
+      image: "/images/projects/workout-vault-concept.svg",
+      imageAlt: "Vista conceptual de funciones de WorkoutVault: registro local de ejercicio, temporizador de descanso, gráfico de fuerza, cálculo Epley y exportación. No es una captura de la aplicación.",
+      imageCaption: "Concepto de funciones de la especificación · no es una captura de la app",
     },
     {
       id: "three-router-home-network",
@@ -703,6 +774,9 @@ const es: ContentBundle = {
       tools: ["ChatGPT", "Deep Research", "Sites", "Diseño de prompts"],
       evidence: "Se creó un prototipo web para Costuras by Sule. El dominio final, mantenimiento comercial y entrega al cliente son decisiones aparte.",
       status: "Prototipo web creado · flujo reutilizable en desarrollo",
+      image: "/images/projects/agentic-website-workflow.svg",
+      imageAlt: "Infografía del flujo para convertir un brief comercial en investigación, plan del sitio, prototipo adaptable y entrega revisada por el propietario.",
+      imageCaption: "Flujo reutilizable ilustrado con el prototipo de Costuras by Sule",
     },
     {
       id: "grc-llm-workflow",
@@ -719,6 +793,9 @@ const es: ContentBundle = {
       tools: ["Claude", "Kimi", "DeepSeek", "ChatGPT", "OpenAI Codex"],
       evidence: "Es un flujo de análisis práctico, no un producto GRC automatizado en producción. No se debe ingresar PHI ni datos confidenciales en modelos públicos.",
       status: "Flujo practicado · requiere validación humana",
+      image: "/images/projects/grc-gap-analysis.svg",
+      imageAlt: "Flujo LLM revisado por una persona para mapear un proceso de privacidad sin datos sensibles a controles NIST CSF candidatos, verificar evidencia y documentar brechas.",
+      imageCaption: "Flujo de análisis · los mapeos candidatos requieren revisar fuentes y evidencia",
     },
     {
       id: "ai-assisted-delivery",
@@ -735,6 +812,9 @@ const es: ContentBundle = {
       tools: ["Claude Code", "OpenAI Codex", "ChatGPT", "Next.js", "TypeScript", "GitHub", "Vercel"],
       evidence: "El sitio superó las comprobaciones de lint y compilación de producción; la versión actual se verificó en horacio-portfolio.vercel.app.",
       status: "Despliegue de producción verificado",
+      image: "/images/projects/agentic-delivery-workflow.svg",
+      imageAlt: "Flujo de entrega de software asistido por agentes: brief, plan, Codex o Claude Code, comprobaciones, revisión humana, GitHub y verificación en producción con Vercel.",
+      imageCaption: "Flujo de producción · los cambios asistidos por agentes se verifican antes de publicar",
     },
   ],
   spaceImage: {
@@ -757,12 +837,13 @@ const es: ContentBundle = {
     exploreInnovation: "Sigue mi trabajo de IA en LinkedIn",
     linkedinLabel: "Conectar en LinkedIn",
     innovationEyebrow: "IA aplicada · Sistemas · Práctica responsable",
-    aiToolsLabel: "Herramientas de IA en práctica",
     innovationChallenge: "El desafío",
     innovationAiRole: "El papel de la IA",
     innovationEvidence: "Evidencia y estado actual",
     innovationTools: "Herramientas",
-    downloadLogo: "Descargar mi logo (SVG)",
+    innovationStandout: "Qué distingue mi enfoque",
+    handsOnTools: "Herramientas que uso en la práctica",
+    nextIntegrationLabel: "Integraciones listas para construir · todavía no conectadas",
   },
 };
 

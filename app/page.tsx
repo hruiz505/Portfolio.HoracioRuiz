@@ -52,6 +52,9 @@ export default function Home() {
         />
         <Innovation
           projects={t.innovationProjects}
+          highlights={t.innovationHighlights}
+          toolGroups={t.innovationToolGroups}
+          nextIntegrationTools={t.nextIntegrationTools}
           title={t.sectionTitles.innovation}
           intro={t.innovationIntro}
           tools={t.aiTools}
@@ -63,7 +66,6 @@ export default function Home() {
         <Contact
           profile={t.profile}
           title={t.sectionTitles.contact}
-          logoLabel={t.ui.downloadLogo}
           imageCredit={t.spaceImage.credit}
         />
       </main>

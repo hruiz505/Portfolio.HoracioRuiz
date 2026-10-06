@@ -50,17 +50,13 @@ export default function Nav({ navLinks, language, onToggleLanguage }: NavProps) 
       />
 
       <div className="flex items-center justify-between px-6 py-5 sm:px-10">
-        <motion.a
+        <a
           href="#top"
-          initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
-          whileInView={{ opacity: 1, rotate: 0, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
           aria-label="Horacio Ruiz — home"
           className="rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#b6b176]"
         >
           <BrandMark />
-        </motion.a>
+        </a>
 
         <div className="hidden items-center gap-5 text-xs font-semibold uppercase tracking-[0.12em] lg:flex">
           <nav className="flex items-center gap-5">

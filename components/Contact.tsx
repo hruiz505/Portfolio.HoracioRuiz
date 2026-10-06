@@ -2,12 +2,12 @@
 
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
+import BrandMark from "@/components/BrandMark";
 import type { Profile } from "@/data/content";
 
 interface ContactProps {
   profile: Profile;
   title: string;
-  logoLabel: string;
   imageCredit: string;
 }
 
@@ -31,7 +31,7 @@ function UnderlineLink({ href, children }: { href: string; children: ReactNode }
   );
 }
 
-export default function Contact({ profile, title, logoLabel, imageCredit }: ContactProps) {
+export default function Contact({ profile, title, imageCredit }: ContactProps) {
   return (
     <section
       id="contact"
@@ -47,19 +47,15 @@ export default function Contact({ profile, title, logoLabel, imageCredit }: Cont
         <UnderlineLink href={`mailto:${profile.email}`}>
           {profile.email}
         </UnderlineLink>
-        <a
-          href="/horacio-ruiz-logo.svg"
-          download="horacio-ruiz-logo.svg"
-          className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#a3a16a]/70 px-5 py-2.5 text-sm font-semibold text-[#d4ce8f] transition-colors hover:bg-[#a3a16a]/15"
-        >
-          {logoLabel}
-        </a>
         <UnderlineLink href={`tel:${profile.phone}`}>
           {profile.phone}
         </UnderlineLink>
         <UnderlineLink href={`https://${profile.linkedin}`}>
           {profile.linkedin}
         </UnderlineLink>
+      </div>
+      <div className="mt-4 border-t border-white/10 pt-8">
+        <BrandMark large />
       </div>
       <span className="absolute bottom-2 right-4 max-w-[85vw] text-right text-[9px] leading-3 text-white/40 sm:text-[10px]">
         {imageCredit}
