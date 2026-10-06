@@ -419,8 +419,8 @@ const en: ContentBundle = {
       ],
       aiRole: "Models accelerate implementation; build, lint, Git review, and public-site checks remain separate. The 80% speed improvement is owner-reported, not a measured benchmark.",
       tools: ["Claude Code", "OpenAI Codex", "ChatGPT", "Next.js", "TypeScript", "GitHub", "Vercel"],
-      evidence: "This portfolio change passed its production build and lint checks and was pushed to GitHub. The production domain was still serving the prior version at the last check.",
-      status: "Source verified · deployment follow-up open",
+      evidence: "The site passed lint and its production build, and the updated experience was verified on horacio-portfolio.vercel.app.",
+      status: "Production deployment verified",
     },
   ],
   spaceImage: {
@@ -752,8 +752,8 @@ const es: ContentBundle = {
       ],
       aiRole: "Los modelos aceleran la implementación; compilación, lint, revisión en Git y verificación pública son pasos distintos. La mejora del 80% es estimada, no medida con un benchmark.",
       tools: ["Claude Code", "OpenAI Codex", "ChatGPT", "Next.js", "TypeScript", "GitHub", "Vercel"],
-      evidence: "Este cambio del portafolio pasó compilación y lint y se envió a GitHub. En la última revisión, el dominio de producción seguía sirviendo la versión anterior.",
-      status: "Código verificado · publicación pendiente",
+      evidence: "El sitio superó las comprobaciones de lint y compilación de producción; la versión actual se verificó en horacio-portfolio.vercel.app.",
+      status: "Despliegue de producción verificado",
     },
   ],
   spaceImage: {
