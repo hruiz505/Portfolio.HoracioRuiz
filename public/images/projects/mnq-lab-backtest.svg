@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">MNQ Lab backtest research memo, October 1, 2026</title>
+  <desc id="desc">Audited HP-10 research snapshot: 500 strategy candidates, 1,150 evaluation runs, 100 candidates met a positive out-of-sample expectancy and minimum trade-count screen. The reused out-of-sample data does not establish a trading edge.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#151a16"/><stop offset="1" stop-color="#25291f"/></linearGradient>
+    <linearGradient id="olive" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#b8b56b"/><stop offset="1" stop-color="#d7d19a"/></linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <path d="M0 0h1280v8H0z" fill="url(#olive)"/>
+  <g font-family="Inter, Arial, sans-serif" fill="#f5f3e9">
+    <text x="72" y="72" font-size="15" font-weight="700" letter-spacing="3" fill="#c8c58a">MNQ LAB  /  RESEARCH MEMO</text>
+    <text x="1208" y="72" font-size="14" text-anchor="end" letter-spacing="1.5" fill="#b8b7aa">OCT 01, 2026</text>
+    <text x="72" y="144" font-size="43" font-weight="700" letter-spacing="-1.5">A backtest is a question,</text>
+    <text x="72" y="194" font-size="43" font-weight="700" letter-spacing="-1.5" fill="#d4d09a">not a promise.</text>
+    <text x="74" y="231" font-size="16" fill="#babcb2">HP-10 · MNQ futures research · complete recorded run</text>
+  </g>
+  <g transform="translate(72 272)" font-family="Inter, Arial, sans-serif">
+    <rect width="1136" height="154" rx="8" fill="#20251f" stroke="#484c3c"/>
+    <g fill="#f7f5eb">
+      <text x="34" y="47" font-size="36" font-weight="700">500</text>
+      <text x="34" y="77" font-size="13" fill="#b9bbaf" letter-spacing="1.4">CANDIDATE STRATEGIES</text>
+      <text x="314" y="47" font-size="36" font-weight="700">1,150</text>
+      <text x="314" y="77" font-size="13" fill="#b9bbaf" letter-spacing="1.4">CHARGED EVALUATIONS</text>
+      <text x="628" y="47" font-size="36" font-weight="700">100</text>
+      <text x="628" y="77" font-size="13" fill="#b9bbaf" letter-spacing="1.4">PASSED THE OOS SCREEN*</text>
+      <text x="910" y="47" font-size="36" font-weight="700" fill="#e0b5a2">0</text>
+      <text x="910" y="77" font-size="13" fill="#b9bbaf" letter-spacing="1.4">MEGA WFE ABOVE 0.5</text>
+    </g>
+    <path d="M282 24v104M596 24v104M878 24v104" stroke="#45493a"/>
+    <text x="34" y="116" font-size="12" fill="#9fa397">candidate ideas explored</text>
+    <text x="314" y="116" font-size="12" fill="#9fa397">IS / OOS + walk-forward slices</text>
+    <text x="628" y="116" font-size="12" fill="#9fa397">positive expectancy + 5+ OOS trades</text>
+    <text x="910" y="116" font-size="12" fill="#9fa397">walk-forward efficiency</text>
+  </g>
+  <g transform="translate(72 454)" font-family="Inter, Arial, sans-serif">
+    <text x="0" y="0" font-size="12" font-weight="700" letter-spacing="2" fill="#c8c58a">CHRONOLOGICAL DATA SPLIT</text>
+    <rect x="0" y="18" width="714" height="13" rx="6.5" fill="#858753"/>
+    <rect x="714" y="18" width="5" height="13" fill="#efc27c"/>
+    <rect x="719" y="18" width="345" height="13" rx="6.5" fill="#b6bd9e"/>
+    <text x="0" y="60" font-size="14" fill="#f5f3e9">IN-SAMPLE · 1,251 sessions</text>
+    <text x="0" y="82" font-size="12" fill="#aeb0a4">May 6, 2019 — Jun 26, 2024</text>
+    <text x="712" y="60" font-size="12" text-anchor="middle" fill="#efc27c">1-day embargo</text>
+    <text x="1064" y="60" font-size="14" text-anchor="end" fill="#f5f3e9">OUT-OF-SAMPLE · 536 sessions</text>
+    <text x="1064" y="82" font-size="12" text-anchor="end" fill="#aeb0a4">Jun 28, 2024 — Sep 11, 2026</text>
+  </g>
+  <rect x="72" y="584" width="1136" height="1" fill="#484c3c"/>
+  <g font-family="Inter, Arial, sans-serif">
+    <text x="72" y="617" font-size="13" font-weight="700" fill="#e3c59a">READ THE LIMITATION</text>
+    <text x="72" y="641" font-size="13" fill="#c5c6bd">*500-way OOS reuse makes positive candidates descriptive, not independent validation. Five trades is a screen—not statistical significance.</text>
+    <text x="72" y="674" font-size="11" letter-spacing=".5" fill="#8f9487">RESEARCH ONLY · PAPER STAGE · LIVE ROUTING DISABLED · SOURCE: SAVED HP-10 RESULTS + OCT 01, 2026 AUDIT RECAP</text>
+  </g>
+</svg>

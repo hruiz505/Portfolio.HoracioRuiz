@@ -56,7 +56,9 @@ export default function Innovation({
         </div>
 
         <div className="grid gap-x-10 md:grid-cols-2">
-          {projects.map((project, index) => (
+          {projects.map((project, index) => {
+            const images = project.screenshots ?? (project.image ? [{ src: project.image, alt: project.imageAlt ?? "" }] : []);
+            return (
             <article key={project.id} className="flex min-w-0 flex-col border-b border-white/15 py-8 sm:py-10">
               <div className="flex items-center justify-between gap-4 text-xs font-semibold uppercase tracking-[0.16em] text-white/50">
                 <span>{project.category}</span>
@@ -64,18 +66,21 @@ export default function Innovation({
               </div>
               <h3 className="mt-4 text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">{project.title}</h3>
               <p className="mt-3 text-base leading-7 text-white/70">{project.summary}</p>
-
-              {project.image && (
-                <figure className="mt-6 overflow-hidden border border-white/10 bg-white/5">
-                  <Image
-                    src={project.image}
-                    alt={project.imageAlt ?? ""}
-                    width={1280}
-                    height={720}
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    className="h-auto w-full object-cover"
-                  />
-                </figure>
+              {images.length > 0 && (
+                <div className={`mt-6 grid gap-3 ${images.length > 1 ? "sm:grid-cols-2" : ""}`}>
+                  {images.map((image) => (
+                    <figure key={image.src} className="overflow-hidden border border-white/10 bg-white/5">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        width={1280}
+                        height={720}
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="h-auto w-full object-cover"
+                      />
+                    </figure>
+                  ))}
+                </div>
               )}
 
               <div className="mt-6 border-l-2 border-[#a3a16a]/80 pl-4">
@@ -106,7 +111,8 @@ export default function Innovation({
                 <p className="mt-3 text-xs font-semibold leading-5 text-[#c3bd76]">{project.status}</p>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
 
         <div className="pt-8">
