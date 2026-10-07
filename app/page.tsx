@@ -67,6 +67,7 @@ export default function Home() {
           profile={t.profile}
           title={t.sectionTitles.contact}
           imageCredit={t.spaceImage.credit}
+          language={language}
         />
       </main>
     </>
