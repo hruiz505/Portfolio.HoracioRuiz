@@ -6,7 +6,7 @@ export default function BrandMark({ large = false }: { large?: boolean }) {
   return (
     <span className={`inline-flex items-center ${large ? "gap-4" : "gap-3"}`}>
       <Image
-        src="/brand/hr-clock-mark-4096.png"
+        src="/brand/hr-clock-mark-dark-4096.png"
         alt=""
         width={markSize}
         height={markSize}

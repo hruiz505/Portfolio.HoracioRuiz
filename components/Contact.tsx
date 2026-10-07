@@ -37,33 +37,33 @@ export default function Contact({ profile, title, imageCredit, language }: Conta
   const isSpanish = language === "es";
   const logoFiles = [
     {
-      href: "/hr-mark.svg",
-      filename: "horacio-ruiz-mark.svg",
+        href: "/hr-mark-dark.svg",
+        filename: "horacio-ruiz-mark-dark.svg",
       label: isSpanish ? "Monograma · SVG" : "Monogram · SVG",
     },
     {
-      href: "/brand/horacio-ruiz-monogram-4096.png",
-      filename: "horacio-ruiz-monogram-4096.png",
+        href: "/brand/hr-clock-mark-dark-4096.png",
+        filename: "horacio-ruiz-mark-dark-4096.png",
       label: isSpanish ? "Monograma · PNG 4096 px" : "Monogram · PNG 4096 px",
     },
     {
-      href: "/brand/horacio-ruiz-wordmark-for-light-background.svg",
-      filename: "horacio-ruiz-wordmark-for-light-background.svg",
+        href: "/brand/horacio-ruiz-wordmark-for-light-background-v2.svg",
+        filename: "horacio-ruiz-wordmark-for-light-background-v2.svg",
       label: isSpanish ? "Logotipo para fondo claro · SVG" : "Wordmark for light backgrounds · SVG",
     },
     {
-      href: "/brand/horacio-ruiz-wordmark-for-light-background-3200.png",
-      filename: "horacio-ruiz-wordmark-for-light-background-3200.png",
+        href: "/brand/horacio-ruiz-wordmark-for-light-background-v2-3200.png",
+        filename: "horacio-ruiz-wordmark-for-light-background-v2-3200.png",
       label: isSpanish ? "Logotipo para fondo claro · PNG 3200 px" : "Wordmark for light backgrounds · PNG 3200 px",
     },
     {
-      href: "/brand/horacio-ruiz-wordmark-for-dark-background.svg",
-      filename: "horacio-ruiz-wordmark-for-dark-background.svg",
+        href: "/brand/horacio-ruiz-wordmark-for-dark-background-v2.svg",
+        filename: "horacio-ruiz-wordmark-for-dark-background-v2.svg",
       label: isSpanish ? "Logotipo para fondo oscuro · SVG" : "Wordmark for dark backgrounds · SVG",
     },
     {
-      href: "/brand/horacio-ruiz-wordmark-for-dark-background-3200.png",
-      filename: "horacio-ruiz-wordmark-for-dark-background-3200.png",
+        href: "/brand/horacio-ruiz-wordmark-for-dark-background-v2-3200.png",
+        filename: "horacio-ruiz-wordmark-for-dark-background-v2-3200.png",
       label: isSpanish ? "Logotipo para fondo oscuro · PNG 3200 px" : "Wordmark for dark backgrounds · PNG 3200 px",
     },
   ];
